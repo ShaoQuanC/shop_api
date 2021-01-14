@@ -13,4 +13,6 @@ public interface Shop_Attribute_Service {
     Map queryAttributeByPage(AttributeVo vo);
 
     void addAttribute(Shop_Attribute shopAttribute);
+
+    void updateAttribute(Shop_Attribute shopAttribute);
 }

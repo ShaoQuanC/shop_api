@@ -36,4 +36,9 @@ public class Shop_Attribute_ServiceImpl implements Shop_Attribute_Service {
     public void addAttribute(Shop_Attribute shopAttribute) {
         shopAttributeDao.addAttribute(shopAttribute);
     }
+
+    @Override
+    public void updateAttribute(Shop_Attribute shopAttribute) {
+        shopAttributeDao.updateAttribute(shopAttribute);
+    }
 }

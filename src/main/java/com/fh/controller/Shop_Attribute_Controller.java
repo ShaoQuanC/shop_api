@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -52,5 +53,20 @@ public class Shop_Attribute_Controller {
     public ResultData addAttribute(Shop_Attribute shopAttribute){
         shopAttributeService.addAttribute(shopAttribute);
         return ResultData.success(null);
+    }
+    /* 修改属性数据
+  路径：http://192.168.1.237:8080/api/attribute/update
+  请求方式：post请求
+  参数：
+  返回值：{"code":200,"message":"提示",data:}*/
+    @PostMapping("update")
+    public ResultData updateAttribute(Shop_Attribute shopAttribute){
+        Date updateDate = new Date();
+        shopAttribute.setUpdateDate(updateDate);
+
+        shopAttributeService.updateAttribute(shopAttribute);
+        return ResultData.success(null);
+
+
     }
 }
