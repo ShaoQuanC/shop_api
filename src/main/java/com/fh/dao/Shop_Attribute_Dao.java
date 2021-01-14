@@ -19,4 +19,7 @@ public interface Shop_Attribute_Dao {
 
     @Update("update shop_attribute set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSKU=#{isSKU},isDel=#{isDel},updateDate=#{updateDate},author=#{author} where id=#{id}")
     void updateAttribute(Shop_Attribute shopAttribute);
+
+    @Update("update shop_attribute set isDel=1 where id=#{id} ")
+    void deleteAttribute(Integer id);
 }

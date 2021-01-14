@@ -41,4 +41,9 @@ public class Shop_Attribute_ServiceImpl implements Shop_Attribute_Service {
     public void updateAttribute(Shop_Attribute shopAttribute) {
         shopAttributeDao.updateAttribute(shopAttribute);
     }
+
+    @Override
+    public void deleteAttribute(Integer id) {
+        shopAttributeDao.deleteAttribute(id);
+    }
 }
