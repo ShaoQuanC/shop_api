@@ -30,7 +30,7 @@ public class Shop_Brand_Controller {
     @Autowired
     private Shop_Brand_Service shopBrandService;
 
-    /* 1.查询所有的商品数据
+    /* 1.查询所有的商品数据啊啊啊
    路径：http://192.168.1.237:8080/api/brand/list
    请求方式：get请求
    参数：
@@ -73,7 +73,7 @@ public class Shop_Brand_Controller {
 
     /* 修改商品数据
    路径：http://localhost:8080/api/brand/update
-   请求方式：post请求
+   请求方式：post请求。
    参数：id
    返回值：{"code":200,"message":"提示"}*/
     @PostMapping("update")
