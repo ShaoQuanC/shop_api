@@ -1,10 +1,12 @@
 package com.fh.controller;
 
+import com.fh.entity.po.Shop_Attribute;
 import com.fh.entity.vo.AttributeVo;
 import com.fh.entity.vo.ResultData;
 import com.fh.service.Shop_Attribute_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,5 +41,16 @@ public class Shop_Attribute_Controller {
         Map map = shopAttributeService.queryAttributeByPage(vo);
         return ResultData.success(map);
 
+    }
+
+    /* 新增属性数据
+   路径：http://192.168.1.237:8080/api/attribute/add
+   请求方式：post请求
+   参数：
+   返回值：{"code":200,"message":"提示",data:}*/
+    @PostMapping("add")
+    public ResultData addAttribute(Shop_Attribute shopAttribute){
+        shopAttributeService.addAttribute(shopAttribute);
+        return ResultData.success(null);
     }
 }

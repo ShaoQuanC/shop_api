@@ -13,4 +13,6 @@ public interface Shop_Attribute_Dao {
     Integer queryCount(AttributeVo vo);
 
     List<Shop_Attribute> queryData(AttributeVo vo);
+
+    void addAttribute(Shop_Attribute shopAttribute);
 }
