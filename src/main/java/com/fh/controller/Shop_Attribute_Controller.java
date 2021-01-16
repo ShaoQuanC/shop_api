@@ -17,6 +17,7 @@ import java.util.Map;
  */
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/attribute/")
 public class Shop_Attribute_Controller {
     @Autowired
