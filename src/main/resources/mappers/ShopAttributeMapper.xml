@@ -6,10 +6,12 @@
 <mapper namespace="com.fh.dao.Shop_Attribute_Dao">
     <select id="queryCount" parameterType="com.fh.entity.vo.AttributeVo" resultType="java.lang.Integer">
       select count(*) from shop_attribute where 4=4
+      and isDel=0
     </select>
 <!-- 页数是从1开始    -->
     <select id="queryData" parameterType="com.fh.entity.vo.AttributeVo" resultType="com.fh.entity.po.Shop_Attribute">
         select * from shop_attribute where 3=3
+        and isDel=0
         limit ${size*(currPage-1)},#{size}
     </select>
 

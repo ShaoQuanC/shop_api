@@ -86,6 +86,18 @@ public class Shop_Brand_Controller {
 
     }
 
+    /* 商品数据逻辑删除
+   路径：http://localhost:8080/api/brand/delIsDel
+   请求方式：delete请求。
+   参数：id
+   返回值：{"code":200,"message":"提示"}*/
+    @DeleteMapping("delIsDel")
+    public ResultData delBandById(Integer id){
+        shopBrandService.delBandById(id);
+        return ResultData.success(null);
+
+    }
+
     @PostMapping("uploadFile")
     @ResponseBody
     public Map uploadFile(HttpServletRequest request, MultipartFile img) throws IOException {

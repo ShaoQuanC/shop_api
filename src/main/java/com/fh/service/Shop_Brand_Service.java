@@ -17,4 +17,6 @@ public interface Shop_Brand_Service {
     void deleteBrand(Integer id);
 
     void updateBrand(Shop_Brand shopBrand);
+
+    void delBandById(Integer id);
 }

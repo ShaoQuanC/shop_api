@@ -47,4 +47,9 @@ public class Shop_Brand_ServiceImpl implements Shop_Brand_Service {
     public void updateBrand(Shop_Brand shopBrand) {
         shopBrandDao.updateBrand(shopBrand);
     }
+
+    @Override
+    public void delBandById(Integer id) {
+        shopBrandDao.delBandById(id);
+    }
 }

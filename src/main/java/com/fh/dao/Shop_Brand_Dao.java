@@ -24,4 +24,7 @@ public interface Shop_Brand_Dao {
 
     @Update("update shop_brand set name=#{name},bandE=#{bandE},imgpath=#{imgpath},bandDesc=#{bandDesc},ord=#{ord},isdel=#{isdel},updateDate=#{updateDate},author=#{author} where id=#{id} ")
     void updateBrand(Shop_Brand shopBrand);
+
+    @Update("update shop_brand set isdel=1 where id=#{id} ")
+    void delBandById(Integer id);
 }

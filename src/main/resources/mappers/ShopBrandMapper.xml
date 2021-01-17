@@ -6,6 +6,7 @@
 <mapper namespace="com.fh.dao.Shop_Brand_Dao">
     <select id="queryCount" parameterType="com.fh.entity.vo.BrandParamsVo" resultType="java.lang.Integer">
       select count(*) from shop_brand where 4=4
+        and isdel=0
       <if test="name!=null and name!=''">
           and name like "%"#{name}"%"
       </if>
@@ -29,6 +30,7 @@
 <!--   0 1 2 3 4 5 6 7 8 9         页数是从1开始    -->
     <select id="queryBrandData" parameterType="com.fh.entity.vo.BrandParamsVo" resultType="com.fh.entity.po.Shop_Brand">
         select * from shop_brand where 3=3
+        and isdel=0
         <if test="name!=null and name!=''">
             and name like "%"#{name}"%"
         </if>
