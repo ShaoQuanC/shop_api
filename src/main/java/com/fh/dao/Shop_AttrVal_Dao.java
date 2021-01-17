@@ -2,6 +2,7 @@ package com.fh.dao;
 
 import com.fh.entity.po.Shop_AttrVal;
 import com.fh.entity.vo.AttrValVo;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface Shop_AttrVal_Dao {
 
     @Insert("insert into shop_attrval (vname,nameCH,attrId) value (#{vname},#{nameCH},#{attrId} )" )
     void addAttrVal(Shop_AttrVal shopAttrVal);
+
+    @Delete("delete from shop_attrval where id=#{id} ")
+    void deleAttrValById(Integer id);
 }

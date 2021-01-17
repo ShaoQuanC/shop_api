@@ -37,4 +37,9 @@ public class Shop_AttrVal_ServiceImpl implements Shop_AttrVal_Service {
     public void addAttrVal(Shop_AttrVal shopAttrVal) {
         shopAttrValDao.addAttrVal(shopAttrVal);
     }
+
+    @Override
+    public void deleAttrValById(Integer id) {
+        shopAttrValDao.deleAttrValById(id);
+    }
 }

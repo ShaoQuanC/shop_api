@@ -13,4 +13,6 @@ public interface Shop_AttrVal_Service {
     Map list(AttrValVo valVo);
 
     void addAttrVal(Shop_AttrVal shopAttrVal);
+
+    void deleAttrValById(Integer id);
 }

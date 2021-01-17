@@ -52,4 +52,15 @@ public class Shop_AttrVal_Controller {
         return ResultData.success("");
 
     }
+
+    /* 删除属性值数据
+             路径：http://192.168.1.237:8080/api/val/del
+            请求方式：post请求
+            参数：id
+            返回值：{"code":200,"message":"提示"}*/
+    @DeleteMapping("del")
+    public ResultData deleAttrValById(Integer id){
+        shopAttrValService.deleAttrValById(id);
+        return ResultData.success("");
+    }
 }
