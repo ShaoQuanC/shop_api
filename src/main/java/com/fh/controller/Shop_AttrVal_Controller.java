@@ -4,6 +4,7 @@ import com.fh.entity.po.Shop_AttrVal;
 import com.fh.entity.vo.AttrValVo;
 import com.fh.entity.vo.ResultData;
 import com.fh.service.Shop_AttrVal_Service;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -62,6 +63,18 @@ public class Shop_AttrVal_Controller {
     public ResultData deleAttrValById(Integer id){
         shopAttrValService.deleAttrValById(id);
         return ResultData.success("");
+    }
+
+    /* 逻辑删除属性值数据
+             路径：http://192.168.1.237:8080/api/val/delete
+            请求方式：delete请求
+            参数：id
+            返回值：{"code":200,"message":"提示"}*/
+    @DeleteMapping("delete")
+    public ResultData delAttrValById(Integer id){
+        shopAttrValService.delAttrValById(id);
+        return ResultData.success("");
+
     }
 
     /* 回显属性值数据

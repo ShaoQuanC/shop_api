@@ -18,7 +18,7 @@ public interface Shop_AttrVal_Dao {
 
     List<Shop_AttrVal> queryAttrValData(AttrValVo valVo);
 
-    @Insert("insert into shop_attrval (vname,nameCH,attrId) value (#{vname},#{nameCH},#{attrId} )" )
+    @Insert("insert into shop_attrval (vname,nameCH,attrId,isdel) value (#{vname},#{nameCH},#{attrId},#{isdel}  )" )
     void addAttrVal(Shop_AttrVal shopAttrVal);
 
     @Delete("delete from shop_attrval where id=#{id} ")
@@ -27,7 +27,9 @@ public interface Shop_AttrVal_Dao {
     @Select("select * from shop_attrval where id=#{id} ")
     Shop_AttrVal queryAttrValDataById(Integer id);
 
-    @Update("update shop_attrval set vname=#{vname},nameCH=#{nameCH} where id=#{id} ")
+    @Update("update shop_attrval set vname=#{vname},nameCH=#{nameCH},isdel=#{isdel} where id=#{id} ")
     void updateAttrValDataById(Shop_AttrVal shopAttrVal);
 
+    @Update("update shop_attrval set isdel=1 where id=#{id} ")
+    void delAttrValById(Integer id);
 }

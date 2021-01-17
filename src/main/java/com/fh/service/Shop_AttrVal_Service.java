@@ -19,4 +19,6 @@ public interface Shop_AttrVal_Service {
     Shop_AttrVal queryAttrValDataById(Integer id);
 
     void updateAttrValDataById(Shop_AttrVal shopAttrVal);
+
+    void delAttrValById(Integer id);
 }

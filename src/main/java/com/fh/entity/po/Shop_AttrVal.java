@@ -14,6 +14,16 @@ public class Shop_AttrVal {
 
     private Integer attrId;
 
+    private int isdel;
+
+    public int getIsdel() {
+        return isdel;
+    }
+
+    public void setIsdel(int isdel) {
+        this.isdel = isdel;
+    }
+
     public Integer getId() {
         return id;
     }
