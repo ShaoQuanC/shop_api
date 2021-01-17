@@ -42,4 +42,16 @@ public class Shop_AttrVal_ServiceImpl implements Shop_AttrVal_Service {
     public void deleAttrValById(Integer id) {
         shopAttrValDao.deleAttrValById(id);
     }
+
+    @Override
+    public Shop_AttrVal queryAttrValDataById(Integer id) {
+        return shopAttrValDao.queryAttrValDataById(id);
+    }
+
+    @Override
+    public void updateAttrValDataById(Shop_AttrVal shopAttrVal) {
+        shopAttrValDao.updateAttrValDataById(shopAttrVal);
+    }
+
+
 }

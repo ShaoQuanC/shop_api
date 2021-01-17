@@ -15,4 +15,8 @@ public interface Shop_AttrVal_Service {
     void addAttrVal(Shop_AttrVal shopAttrVal);
 
     void deleAttrValById(Integer id);
+
+    Shop_AttrVal queryAttrValDataById(Integer id);
+
+    void updateAttrValDataById(Shop_AttrVal shopAttrVal);
 }

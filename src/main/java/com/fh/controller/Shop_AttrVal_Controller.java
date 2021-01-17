@@ -55,12 +55,35 @@ public class Shop_AttrVal_Controller {
 
     /* 删除属性值数据
              路径：http://192.168.1.237:8080/api/val/del
-            请求方式：post请求
+            请求方式：delete请求
             参数：id
             返回值：{"code":200,"message":"提示"}*/
     @DeleteMapping("del")
     public ResultData deleAttrValById(Integer id){
         shopAttrValService.deleAttrValById(id);
+        return ResultData.success("");
+    }
+
+    /* 回显属性值数据
+             路径：http://192.168.1.237:8080/api/val/queryAttrValDataById
+            请求方式：post请求
+            参数：id
+            返回值：{"code":200,"message":"提示","data":{*}*/
+    @PostMapping("queryAttrValDataById")
+    public ResultData queryAttrValDataById(Integer id){
+        Shop_AttrVal shopAttrVal = shopAttrValService.queryAttrValDataById(id);
+        return ResultData.success(shopAttrVal);
+
+    }
+
+    /* 修改属性值数据
+             路径：http://192.168.1.237:8080/api/val/update
+            请求方式：post请求
+            参数：id
+            返回值：{"code":200,"message":"提示","data":{*}*/
+    @PostMapping("update")
+    public ResultData updateAttrValDataById(Shop_AttrVal shopAttrVal){
+        shopAttrValService.updateAttrValDataById(shopAttrVal);
         return ResultData.success("");
     }
 }
