@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.dao.Shop_AttrVal_Dao">
+    <select id="queryCount" parameterType="com.fh.entity.vo.AttrValVo" resultType="java.lang.Integer">
+      select count(*) from shop_attrval where 4=4
+      and attrId=#{id}
+
+    </select>
+<!-- 页数是从1开始    -->
+    <select id="queryAttrValData" parameterType="com.fh.entity.vo.AttrValVo" resultType="com.fh.entity.po.Shop_AttrVal">
+        select * from shop_attrval where 3=3
+        and attrId=#{id}
+
+        limit ${size*(currPage-1)},#{size}
+    </select>
+
+</mapper>

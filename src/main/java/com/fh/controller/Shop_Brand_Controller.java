@@ -98,7 +98,7 @@ public class Shop_Brand_Controller {
 
     }
 
-    @PostMapping("uploadFile")
+    @RequestMapping("uploadFile")
     @ResponseBody
     public Map uploadFile(HttpServletRequest request, MultipartFile img) throws IOException {
 
