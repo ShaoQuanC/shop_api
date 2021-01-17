@@ -1,13 +1,11 @@
 package com.fh.controller;
 
+import com.fh.entity.po.Shop_AttrVal;
 import com.fh.entity.vo.AttrValVo;
 import com.fh.entity.vo.ResultData;
 import com.fh.service.Shop_AttrVal_Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -41,5 +39,17 @@ public class Shop_AttrVal_Controller {
 
         Map map = shopAttrValService.list(valVo);
         return ResultData.success(map);
+    }
+
+    /* 增加属性值数据
+             路径：http://192.168.1.237:8080/api/val/add
+            请求方式：post请求
+            参数：
+            返回值：{"code":200,"message":"提示"}*/
+    @PostMapping("add")
+    public ResultData addAttrVal(Shop_AttrVal shopAttrVal){
+        shopAttrValService.addAttrVal(shopAttrVal);
+        return ResultData.success("");
+
     }
 }

@@ -32,4 +32,9 @@ public class Shop_AttrVal_ServiceImpl implements Shop_AttrVal_Service {
 
         return map;
     }
+
+    @Override
+    public void addAttrVal(Shop_AttrVal shopAttrVal) {
+        shopAttrValDao.addAttrVal(shopAttrVal);
+    }
 }

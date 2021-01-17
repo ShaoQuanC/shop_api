@@ -1,5 +1,6 @@
 package com.fh.service;
 
+import com.fh.entity.po.Shop_AttrVal;
 import com.fh.entity.vo.AttrValVo;
 
 import java.util.Map;
@@ -10,4 +11,6 @@ import java.util.Map;
  */
 public interface Shop_AttrVal_Service {
     Map list(AttrValVo valVo);
+
+    void addAttrVal(Shop_AttrVal shopAttrVal);
 }
