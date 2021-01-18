@@ -19,4 +19,6 @@ public interface Shop_Type_Service {
     Shop_Type queryTypeDataById(Integer id);
 
     void updateType(Shop_Type shopType);
+
+    void deleteTypeByIsDel(Integer id);
 }

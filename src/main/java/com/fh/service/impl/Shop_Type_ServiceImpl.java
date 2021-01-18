@@ -45,5 +45,10 @@ public class Shop_Type_ServiceImpl implements Shop_Type_Service {
         shopTypeDao.updateType(shopType);
     }
 
+    @Override
+    public void deleteTypeByIsDel(Integer id) {
+        shopTypeDao.deleteTypeByIsDel(id);
+    }
+
 
 }

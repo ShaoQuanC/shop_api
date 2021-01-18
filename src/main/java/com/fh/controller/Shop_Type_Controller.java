@@ -87,4 +87,15 @@ public class Shop_Type_Controller {
         shopTypeService.updateType(shopType);
         return ResultData.success(null);
     }
+
+    /* 类型的逻辑删除
+    路径：http://localhost:8080/api/type/del
+    请求方式： delete请求
+    参数：id （必传）
+    返回值： {code:"",message:""}*/
+    @DeleteMapping("del")
+    public ResultData deleteTypeByIsDel(Integer id){
+        shopTypeService.deleteTypeByIsDel(id);
+        return ResultData.success(null);
+    }
 }

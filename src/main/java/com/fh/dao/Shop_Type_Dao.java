@@ -27,6 +27,9 @@ public interface Shop_Type_Dao {
     @Update("update shop_type set name=#{name},pid=#{pid},createDate=#{createDate},updateDate=#{updateDate},author=#{author},isDel=#{isDel} where id=#{id} ")
     void updateType(Shop_Type shopType);
 
+    @Update("update shop_type set isDel=1 where id=#{id} ")
+    void deleteTypeByIsDel(Integer id);
+
 
     //void updateTypeDataById(Integer id);
 }
