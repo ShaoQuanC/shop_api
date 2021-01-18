@@ -8,9 +8,19 @@ public class AttrValVo {
 
     private Integer id;
 
+    private Integer attrId;
+
     private Integer currPage;
 
     private Integer size;
+
+    public Integer getAttrId() {
+        return attrId;
+    }
+
+    public void setAttrId(Integer attrId) {
+        this.attrId = attrId;
+    }
 
     public Integer getId() {
         return id;

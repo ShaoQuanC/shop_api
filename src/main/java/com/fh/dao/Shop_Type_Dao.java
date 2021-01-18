@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public interface Shop_Type_Dao {
 
-    @Select("select * from shop_type where 1=1")
+    @Select("select * from shop_type where 1=1 and isDel=0")
     List<Shop_Type> queryTypeData();
 
     @Select("select * from shop_type where pid=#{pid} ")

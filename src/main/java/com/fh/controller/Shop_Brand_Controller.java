@@ -4,16 +4,17 @@ import com.fh.entity.po.Shop_Brand;
 import com.fh.entity.vo.BrandParamsVo;
 import com.fh.entity.vo.ResultData;
 import com.fh.service.Shop_Brand_Service;
+import com.fh.utils.Oss;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -144,6 +145,23 @@ public class Shop_Brand_Controller {
         result.put("url", "http://192.168.1.237:8080"+"/imgs/"+fileNewName);
         result.put("fileNewName",fileNewName);
         return result;
+    }
+
+    @RequestMapping("file")
+    public ResultData uploadFile(MultipartFile file) throws IOException {
+        //处理新名称
+        String originalFilename = file.getOriginalFilename();
+        //防止中文引起的错误
+        String newName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
+        //存储路径
+        //根据上传时间去创建文件夹
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String format = sdf.format(d);
+        System.out.println(d);
+
+        newName=format+"/"+newName;
+        return ResultData.success(Oss.uploadFile(file.getInputStream(),newName));
     }
 }
 
