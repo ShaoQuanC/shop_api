@@ -27,7 +27,7 @@ public class Shop_Type {
 
     private String author;
 
-    private Integer isDel;
+    private int isDel;
 
     public Integer getId() {
         return id;
@@ -77,11 +77,11 @@ public class Shop_Type {
         this.author = author;
     }
 
-    public Integer getIsDel() {
+    public int getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(Integer isDel) {
+    public void setIsDel(int isDel) {
         this.isDel = isDel;
     }
 }
